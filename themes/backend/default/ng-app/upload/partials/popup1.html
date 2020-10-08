@@ -1,0 +1,80 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-file-upload"><i class="fa fa-upload"></i> File Upload</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="vm.cancel()">×</button>
+    </div>
+    <div class="modal-body" id="modal-body-file-upload">
+    <ul class="nav customtab nav-tabs" role="tablist">
+        <li ng-if="vm.mode.indexOf('repository') != -1 " role="presentation" class="nav-item {[{ vm.getActiveTab() == 'repository' ? 'active' : '' }]}"><a class="nav-link {[{ vm.getActiveTab() == 'repository' ? 'active' : '' }]}" href="javascript:void(0)" data-target="#popup-file-repository" role="tab" data-toggle="tab"><span class="visible-xs"><i class="mdi-format-list-bulleted mdi"></i></span><span class="hidden-xs"> Files</span></a></li>
+        <li ng-if="vm.mode.indexOf('upload') != -1 " role="presentation" class="nav-item {[{ vm.getActiveTab() == 'upload'  ? 'active' : '' }]}"><a class="nav-link" href="javascript:void(0)" role="tab" data-target="#popup-file-upload" data-toggle="tab" data-ng-click="vm.createUppy()"><span class="visible-xs"><i class="mdi mdi-upload"></i></span> <span class="hidden-xs">Upload</span></a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane {[{ vm.getActiveTab() == 'repository'  ? 'active' : '' }]}" id="popup-file-repository" ng-if="vm.mode.indexOf('repository') != -1 ">
+            <div class="xhr-loading" ng-if="vm.files == null">
+                <i class="fa fa-circle-o-notch fa-spin fa-3x"></i>
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="row p-20" ng-if="vm.files.length">
+                <div class="col-lg-12 col-md-12 text-right">
+                    <div ng-show="vm.totalPages > 1" class="align-center">
+                        <div class="button-group">
+                            <button class="btn-secondary btn btn-sm btn-outline-info"><i class="mdi mdi-chevron-left"></i> Trước</button>
+                            <button class="btn-secondary btn btn-sm btn-outline-info"><i class="mdi mdi-chevron-right"></i> Sau</button>
+                            <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Trang {[{ vm.currentPage }]} / {[{ vm.totalPages }]}
+                            </button>
+                            <div class="dropdown-menu" style="height:300px; overflow-y: auto">
+                                <a class="dropdown-item" href="#" data-ng-repeat="i in vm.totalPages | range" data-ng-click="vm.selectPage(i+1)">Trang {[{ i + 1 }]} / {[{ vm.totalPages }]}</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-12">
+                    <ul class="list-unstyled" ng-if="vm.view == 'detail'">
+                        <li class="media" data-ng-repeat="file in vm.files">
+                            <img ng-if="['jpg','png','gif','jpeg','JPG','PNG'].indexOf(file.data.ext) != -1" class="d-flex mr-3" ng-src="{[{ ('/content/uploads/' + file.data.path + file.data.name) || '/ui/material-pro/assets/images/no-image.jpg' }]}" alt="Image" width="100"  ng-dblclick="vm.onDblClick($index)">
+                            <img ng-if="['doc','docx','xls','xlsx','pdf','zip','ppt','pptx','mp3'].indexOf(file.data.ext) != -1" class="d-flex mr-3" ng-src="{[{ ('/ui/material-pro/assets/images/files/' + file.data.ext + '.png') || '/ui/material-pro/assets/images/no-image.jpg' }]}" alt="Image" width="100"  ng-dblclick="vm.onDblClick($index)">
+                            <div class="media-body">
+                                <h4 class="mt-0 mb-1 text-primary"><a href="javascript:void(0)">{[{file.data.name}]}</a></h4>
+                                <!--<a href="">/content/uploads/{[{ file.data.path }]}{[{ file.data.name }]}</a>-->
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <!--<h5 class="text-megna">Id: {[{ vm.file.uuid }]}</h5><br/>-->
+                                            <!--<h5 class="text-megna">Name: {[{ vm.file.data.name }]}</h5><br/>-->
+                                            <h5 class="text-megna"><i class="mdi mdi-file"></i> Loại: {[{ file.data.type }]}</h5>
+                                            <h5 class="text-megna"><i class="mdi mdi-file"></i> Kích cỡ: {[{ file.data.size }]}</h5>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="col-sm-12">
+                                    <button ng-click="vm.onDblClick($index)" type="button" class="btn btn-sm btn-outline-info"><i class="mdi mdi-check"></i> Chọn</button>
+                                    <button ng-click="vm.remove(file.uuid, $index, $event)" type="button" class="btn btn-sm btn-outline-danger"><i class="mdi mdi-close"></i> Xóa</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div role="tabpanel" class="tab-pane {[{ vm.getActiveTab() == 'upload'  ? 'active' : '' }]}" id="popup-file-upload" ng-if="vm.mode.indexOf('upload') != -1 ">
+            <div class="row p-20">
+                <div class="container-full">
+                    <div id="uppy"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-outline-info" ng-click="vm.select()" ng-if="vm.file"><i class="fa fa-check"></i> Chọn</button>
+    <button class="btn btn-outline-info" ng-click="vm.cancel()"><i class="fa fa-remove"></i> Đóng</button>
+</div>

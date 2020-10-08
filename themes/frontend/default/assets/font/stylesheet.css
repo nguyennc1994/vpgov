@@ -1,0 +1,26 @@
+@font-face {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: normal;
+src: local('Roboto Regular'), url('Roboto-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'VNI-ItcKabel';
+    src: url('VNI-ItcKabelMedium.woff2') format('woff2'),
+        url('VNI-ItcKabelMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Calibri';
+    src: url('subset-Calibri.eot');
+    src: url('subset-Calibri.eot?#iefix') format('embedded-opentype'),
+        url('subset-Calibri.woff2') format('woff2'),
+        url('subset-Calibri.woff') format('woff'),
+        url('subset-Calibri.ttf') format('truetype'),
+        url('subset-Calibri.svg#Calibri') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

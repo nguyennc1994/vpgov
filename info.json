@@ -1,0 +1,11 @@
+{
+  "name": "vpgov",
+  "title": {
+    "vi": "Quản trị Viettel 1"
+  },
+  "desc": {
+    "vi": "Quản lý nội dung Viettel1",
+  },
+  "author": "Nguyễn Công Nguyên",
+  "version": "1.0"
+}
