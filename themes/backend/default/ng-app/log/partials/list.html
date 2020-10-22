@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+
+            <div class="panel-body">
+                <div class="form-horizontal well">
+                    <div class="form-group">
+                        <label>Năm</label>
+                        <select class="form-control" data-ng-model="year">
+                            <option ng-repeat="item in years" value="{[{item}]}">{[{item}]}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tháng</label>
+                        <select class="form-control" data-ng-model="month">
+                            <option ng-repeat="item in months" value="{[{item}]}">{[{item}]}</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" data-ng-click="viewLog()"><i class="fa fa-search"></i> Xem</button>
+                </div>
+                <hr/>
+                <div class="panel-group" id="logfile_accordion" ng-show="logs">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a href="javascript:;" data-toggle="collapse" data-parent="#logfile_accordion" data-target="#logfile_collapse">
+                                    Danh sách log file tháng {[{month}]} năm {[{year}]}
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="logfile_collapse" class="panel-collapse collapse in">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item" data-ng-repeat="file in logs" data-ng-click="view(file, $index, $event)">
+
+                                    <h4 class="list-group-item-heading">{[{file}]}</h4>
+                                </a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-group" id="accordion" ng-show="messages">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a href="javascript:;" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
+                                Nội dung Log
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped-row">
+                                    <thead>
+                                    <tr class="bg-primary">
+                                        <th style="width:200px;">Thời gian</th>
+                                        <th style="width:100px;">Loại</th>
+                                        <th>Thông tin lưu vết</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr data-ng-repeat="message in messages">
+                                        <td>{[{message.datetime}]}</td>
+                                        <td><span class="label label-{[{message.cls}]}">{[{message.type_msg}]}</span></td>
+                                        <td><span class="text-{[{message.cls}]}">{[{message.message}]}</span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

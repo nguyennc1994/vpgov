@@ -33,6 +33,7 @@
             </div>
 
         </div>
+
         <div class="well">
             <input type="text" data-ng-model="vm.filterCriteria.query" class="form-control" placeholder="Tìm bài viết" uib-typeahead="u.data.title[vm.current_lang] for u in vm.query($viewValue)" typeahead-loading="loadingPosts" typeahead-no-results="noResults" class="form-control" typeahead-on-select="vm.onPostSelect($item, $model, $label, $event)">
             <i ng-show="loadingPosts" class="fa fa-refresh"></i>
@@ -104,6 +105,7 @@
                 <div ng-show="vm.categoriesCount == 0">
                     <h3>Không có dữ liệu</h3>
                 </div>
+
             </div>
         </div>
     </div>

@@ -4,6 +4,9 @@ namespace QQ\Module\Vpgov\Controller;
 
 use Phalcon\Di\Service;
 use QQ\Core\Model\Services\Service\Workflow;
+use QQ\Core\Library\Auth\Exception;
+//use QQ\Core\Model\Services\Service;
+use QQ\Core\Model\Services\Exceptions;
 
 
 class BackendController extends ControllerBase
@@ -33,4 +36,20 @@ class BackendController extends ControllerBase
             ['title' => ['vi'=>'Quan tâm của Đảng và Nhà nước'], 'href' => false],
         ]);
     }
+
+    public function logAction()
+    {
+        $this->assets->addJs("/modules/vpgov/themes/backend/default/ng-app/app.js");
+//        $this->assets->addJs("/modules/vpgov/themes/backend/default/ng-app/upload/services/index.js");
+//        $this->assets->addJs("/modules/vpgov/themes/backend/default/ng-app/upload/controllers/popup.js");
+        $this->assets->addJs("/modules/vpgov/themes/backend/default/ng-app/log/services/index.js");
+        $this->assets->addJs("/modules/vpgov/themes/backend/default/ng-app/log/controllers/index.js");
+
+        $this->view->setVar('main_title', ['vi'=>'Kiểm tra log hệ thống']);
+        $this->view->setVar('main_breadcrumb', [
+            ['title' => ['vi'=>'Trang chủ'], 'href' => '/vpgov/backend/logs'],
+            ['title' => ['vi'=>'Logs hệ thống'], 'href' => false],
+        ]);
+    }
+
 }

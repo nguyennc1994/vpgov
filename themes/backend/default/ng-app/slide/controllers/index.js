@@ -62,6 +62,7 @@ angular.module('vpgov').controller('SlideListController', function ($scope, Slid
     }
 
 
+
     $('#selectScreen').on('change', function () {
         //ways to retrieve selected option and text outside handler
         console.log('Changed option value ' + this.value);

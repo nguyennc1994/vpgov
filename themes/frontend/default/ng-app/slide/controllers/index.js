@@ -25,36 +25,20 @@ angular.module('vpgov').config(function ($stateProvider, $urlRouterProvider, CFG
 angular.module('vpgov').controller('SlideList1Controller', function($scope, SlideService){
     var vm = this;
 
-    vm.setLang = function(lang){
-        vm.current_lang = lang;
-        vm.filterCriteria.lang = lang;
-        vm.currentPage = 1;
-        vm.filterCriteria.pageNumber = 1;
-        vm.fetchResult();
-    };
     function init(){
-        //default criteria that will be sent to the server
-
-        vm.filterCriteria = {
-            pageNumber: 1,
-            sortDir: 'asc',
-            sortedBy: 'id',
-            model: 'slide',
-            module: 'vpgov',
-            type: 'entity'
-        };
-
-        vm.selectPage(1);
+        vm.fetchResult();
     }
 
-    //called when navigate to another page in the pagination
-    vm.selectPage = function (page) {
-        vm.filterCriteria.pageNumber = page;
-        vm.fetchResult();
-    };
+    vm.myOnload = function () {
+        return "<h1>AAAA</h1>"
+
+    }
+
+    $( "#slider" ).html( "<div><h1>Test ty gi cang</h1></div>" );
+
     //The function that is responsible of fetching the result from the server and setting the grid to the new result
-    vm.fetchResult = function () {
-        return SlideService.list(vm.filterCriteria).then(function (data) {
+    vm.fetchResult = async function () {
+        return SlideService.list(vm.filterCriteria).then(async function (data) {
             // vm.slides = data.items;
             console.log("data: "+data.items)
             vm.slides = []
@@ -65,8 +49,6 @@ angular.module('vpgov').controller('SlideList1Controller', function($scope, Slid
                             vm.slides.push(data.items[i]);
                         }
                     }
-
-            console.log("AAAAAAAAAAAAAA"+ JSON.stringify(vm.slides))
             vm.totalPages = data.pages;
             vm.slidesCount = data.items.length;
         }, function () {
@@ -75,6 +57,8 @@ angular.module('vpgov').controller('SlideList1Controller', function($scope, Slid
             vm.slidesCount = 0;
         });
     };
+
+    // document.addEventListener("DOMContentLoaded", ready);
 
     $('#slider').layerSlider({
         sliderVersion: '6.0.0',
@@ -88,17 +72,10 @@ angular.module('vpgov').controller('SlideList1Controller', function($scope, Slid
         skinsPath: '/modules/vpgov/themes/backend/default/assets/skins/'
     })
 
-    vm.onSlideSelect = function($item, $model, $label){
-        // if(_.isDefined(vm.post.catalog)) vm.catalog = {};
-        // if(!_.isDefined(vm.related_posts)) vm.related_posts = [];
-        if(_.isEmpty(vm.slide.catalog.post)) vm.slide.catalog.slide = [];
-        vm.slide.catalog.slide.push($item.uuid);
-        vm.related_posts.push({
-            title: $item.data.title,
-            uuid: $item.uuid,
-            slide_type: $item.slide_type
-        })
-    };
+    vm.taiLaiTrang = function (){
+        console.log("Tai lai trang")
+        location.reload();
+    }
 
     init();
 
@@ -208,6 +185,7 @@ angular.module('vpgov').controller('SlideList3Controller', function($scope, Slid
         vm.currentPage = 1;
         vm.filterCriteria.pageNumber = 1;
         vm.fetchResult();
+        vm.setTimeout(taiLai)
     };
     function init(){
         //default criteria that will be sent to the server
@@ -225,7 +203,11 @@ angular.module('vpgov').controller('SlideList3Controller', function($scope, Slid
     }
 
 
+    vm.taiLaiTrang = function (){
+        console.log("Tai lai trang")
+        location.reload();
 
+    }
     //called when navigate to another page in the pagination
     vm.selectPage = function (page) {
         vm.filterCriteria.pageNumber = page;
@@ -242,6 +224,12 @@ angular.module('vpgov').controller('SlideList3Controller', function($scope, Slid
                     console.log("Check screen: "+data.items[i].data);
                     vm.slides.push(data.items[i]);
                 }
+            }
+            console.log(vm.slides.length)
+
+            if(vm.slides.length==0) {
+                vm.taiLaiTrang()
+                console.log("reload")
             }
 
             console.log("List 3"+ JSON.stringify(vm.slides))

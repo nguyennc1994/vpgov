@@ -2,7 +2,20 @@
 <hr/>
 <div class="row">
     <form class="col-6 form-group">
-        <div class="row">
+        <div class="row mt-4">
+            <h6 class="col-sm-3">Tên: </h6>
+            <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.name">
+        </div>
+        <div class="row mt-4">
+            <h6 class="col-sm-3">Chức vụ: </h6>
+            <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.position">
+        </div>
+        <div class="row mt-4">
+            <h6 class="col-sm-3">Câu nói: </h6>
+            <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.quote">
+        </div>
+
+        <div class="row mt-4">
             <h6 class="col-sm-3">Ảnh mờ: </h6>
             <button id="shadowImage " class="popup-file col-sm-9 btn btn-outline-info btn-block" value="Shadow Image"
                     ng-click="vm.popupFileShadowImage()" value="Shadow Image" ng-model="vm.slide.data.shadowImage">
@@ -17,18 +30,6 @@
             </button>
         </div>
 
-        <div class="row mt-4">
-            <h6 class="col-sm-3">Câu nói: </h6>
-            <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.quote">
-        </div>
-        <div class="row mt-4">
-            <h6 class="col-sm-3">Chức vụ: </h6>
-            <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.position">
-        </div>
-        <div class="row mt-4">
-            <h6 class="col-sm-3">Tên: </h6>
-            <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.name">
-        </div>
         <div class="row mt-4">
             <h6 class="col-sm-3">Ảnh chính: </h6>
             <button class="col-sm-9 btn btn-outline-info btn-block" ng-click="vm.popupFileMainImage()"

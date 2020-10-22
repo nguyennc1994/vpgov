@@ -35,9 +35,9 @@ $vpgov->add('/vpgov/frontend/slide', [
     'action'    => 'slide'
 ]);
 
-$vpgov->add('/vpgov/frontend', [
-    'controller' => 'frontend',
-    'action'    => 'index'
+$vpgov->add('/vpgov/backend/logs', [
+    'controller' => 'backend',
+    'action'    => 'log'
 ]);
 
 $vpgov->add('/vpgov[/]?', [

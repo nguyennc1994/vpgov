@@ -396,37 +396,30 @@
                     <li><a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false"><i
                                     class="mdi mdi-book-open-page-variant"></i><span class="hide-menu">Nội dung </span></a>
                         <ul aria-expanded="false" class="collapse">
-                            <li><a href="/vpgov/backend/slide/"><i class="mdi mdi-minus"></i> Slide</a></li>
+                            <li><a href="/vpgov/backend/slide/"><i class="mdi mdi-minus"></i>Danh sách Slide</a></li>
+
+                        </ul>
+                        <ul aria-expanded="false" class="collapse">
+                            <li>
+                                <a ui-sref="create"><i class="mdi mdi-minus"></i> Thêm Slide</a>
+                            </li>
+
 
                         </ul>
                     </li>
                     <li><a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false"><i
-                                    class="mdi mdi-book-open-page-variant"></i><span class="hide-menu">Transparents </span></a>
+                                    class="mdi mdi-book-open-page-variant"></i><span class="hide-menu">Hệ thống </span></a>
                         <ul aria-expanded="false" class="collapse">
-                            <li><a href="/vpgov/backend/transparents/articles/"><i class="mdi mdi-minus"></i>Articles</a></li>
-
-                        </ul>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="/vpgov/backend/transparents/screens/"><i class="mdi mdi-minus"></i>Screens</a></li>
+                            <li><a href="/backend/log/"><i class="mdi mdi-minus"></i>Logs hệ thống</a></li>
 
                         </ul>
 
-                    </li>
-                    <li><a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false"><i
-                                    class="mdi mdi-book-open-page-variant"></i><span class="hide-menu">Milestones </span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="/vpgov/backend/milestones/screens/"><i class="mdi mdi-minus"></i>Screens</a></li>
-
-                        </ul>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="/vpgov/backend/milestones/articles/"><i class="mdi mdi-minus"></i>Articles</a></li>
-
-                        </ul>
                     </li>
                     <li><a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false"><i
                                     class="mdi mdi-monitor"></i><span class="hide-menu"> Hệ thống </span></a>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="/cms/workflow/"><i class="mdi mdi-minus"></i> Quy trình</a></li>
+                            <li><a href="/vpgov/backend/logs/"><i class="mdi mdi-minus"></i> Logs</a></li>
                         </ul>
                     </li>
                 </ul>

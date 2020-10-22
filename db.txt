@@ -1,0 +1,25 @@
+-- Table: public.viettel_slide
+
+-- DROP TABLE public.viettel_slide;
+
+CREATE TABLE public.viettel_slide
+(
+    uuid uuid NOT NULL,
+    data jsonb,
+    catalog jsonb,
+    workflow jsonb,
+    created_by uuid,
+    updated_by uuid,
+    published_on timestamp(6) with time zone DEFAULT now(),
+    created_on timestamp(6) with time zone DEFAULT now(),
+    updated_on timestamp(6) with time zone DEFAULT now(),
+    exprired_on timestamp(6) with time zone DEFAULT now(),
+    CONSTRAINT viettel_slides_pkey PRIMARY KEY (uuid)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.viettel_slide
+    OWNER to postgres;
