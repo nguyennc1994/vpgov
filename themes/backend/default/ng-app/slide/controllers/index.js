@@ -57,8 +57,6 @@ angular.module('vpgov').controller('SlideListController', function ($scope, Slid
 
     vm.getUuid = function (uuid) {
         uuid_editing = uuid;
-        console.log(uuid_editing)
-        console.log(uuid)
     }
 
 
@@ -207,7 +205,17 @@ angular.module('vpgov').controller('SlideListController', function ($scope, Slid
 
 angular.module('vpgov').controller('SlideFormController', function ($scope, $state, $stateParams, Slug, uuid, ModuleDataService, SlideService, $uibModal) {
     var vm = this;
+
+    vm.languages = ['vi', 'en'];
+    vm.current_lang = $stateParams.lang ;
+    console.log("vm.current_lang: "+vm.current_lang)
+    vm.setLang = function (lang) {
+        vm.current_lang = lang;
+        // vm.filterCriteria.lang = lang;
+        // vm.fetchResult();
+    };
     vm.init = function () {
+        vm.current_lang="vi";
         vm.slide = {
             uuid: uuid.v4(),
             data: {
@@ -215,11 +223,26 @@ angular.module('vpgov').controller('SlideFormController', function ($scope, $sta
                     vi: "",
                     en: ""
                 },
-                quote: "",
-                position: "",
-                name: "",
-                leftSubTitle: "",
-                rightSubTitle: "",
+                quote: {
+                    vi: "",
+                    en: ""
+                },
+                position: {
+                    vi: "",
+                    en: ""
+                },
+                name: {
+                    vi: "",
+                    en: ""
+                },
+                leftSubTitle: {
+                    vi: "",
+                    en: ""
+                },
+                rightSubTitle: {
+                    vi: "",
+                    en: ""
+                },
                 shadowImage: "",
                 backgroundImage: "/content/uploads/vpgov/slide/Background Image/bgtrg1.png",
                 mainImage: "",
@@ -542,19 +565,43 @@ angular.module('vpgov').controller('SlideFormController', function ($scope, $sta
 
 angular.module('vpgov').controller('SlideEditController', function ($scope, $state, $stateParams, Slug, uuid, ModuleDataService, SlideService, $uibModal) {
     var vm = this;
+    vm.languages = ['vi', 'en'];
+    vm.current_lang = $stateParams.lang ;
+    console.log("vm.current_lang: "+vm.current_lang)
+    vm.setLang = function (lang) {
+        vm.current_lang = lang;
+        // vm.filterCriteria.lang = lang;
+        // vm.fetchResult();
+    };
     vm.init = function () {
+        vm.current_lang="vi";
         vm.slide = {
-            uuid: '',
+            uuid: uuid.v4(),
             data: {
                 title: {
                     vi: "",
                     en: ""
                 },
-                quote: "",
-                position: "",
-                name: "",
-                leftSubTitle: "",
-                rightSubTitle: "",
+                quote: {
+                    vi: "",
+                    en: ""
+                },
+                position: {
+                    vi: "",
+                    en: ""
+                },
+                name: {
+                    vi: "",
+                    en: ""
+                },
+                leftSubTitle: {
+                    vi: "",
+                    en: ""
+                },
+                rightSubTitle: {
+                    vi: "",
+                    en: ""
+                },
                 shadowImage: "",
                 backgroundImage: "/content/uploads/vpgov/slide/Background Image/bgtrg1.png",
                 mainImage: "",
@@ -570,13 +617,6 @@ angular.module('vpgov').controller('SlideEditController', function ($scope, $sta
             catalog: {},
 
         };
-
-        vm.filterCriteria = {
-            uuid: uuid_editing
-        };
-
-        vm.selectPage(1);
-
     };
 
     vm.submit = function () {

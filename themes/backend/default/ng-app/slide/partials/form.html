@@ -1,144 +1,177 @@
-<!--{[{ vm.slide | json }]}-->
-<hr/>
-<div class="row">
-    <form class="col-6 form-group">
-        <div class="row mt-4">
-            <h6 class="col-sm-3">Tên: </h6>
-            <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.name">
-        </div>
-        <div class="row mt-4">
-            <h6 class="col-sm-3">Chức vụ: </h6>
-            <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.position">
-        </div>
-        <div class="row mt-4">
-            <h6 class="col-sm-3">Câu nói: </h6>
-            <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.quote">
-        </div>
+{[{ vm.slide | json }]}
+<div class="card card card-outline-info">
+    <div class="card-header bg-theme">
+        <h4 class="m-b-0 text-white"><i class="mdi mdi-pencil-box-outline"></i> Thông tin chi tiết
+        </h4>
 
-        <div class="row mt-4">
-            <h6 class="col-sm-3">Ảnh mờ: </h6>
-            <button id="shadowImage " class="popup-file col-sm-9 btn btn-outline-info btn-block" value="Shadow Image"
-                    ng-click="vm.popupFileShadowImage()" value="Shadow Image" ng-model="vm.slide.data.shadowImage">
-                <i class="mdi mdi-cloud-upload" value="Shadow Image"></i> Chọn ảnh
-            </button>
-        </div>
-        <div class="row mt-4">
-            <h6 class="col-sm-3">Nền: </h6>
-            <button class="col-sm-9 btn btn-outline-info btn-block" value="Background Image" ng-click="vm.popupFileBackground()"
-                    ng-model="vm.slide.data.backgroundImage"><i
-                    class="mdi mdi-cloud-upload"></i> Chọn ảnh
-            </button>
-        </div>
+    </div>
+    <div class="row ml-2">
 
-        <div class="row mt-4">
-            <h6 class="col-sm-3">Ảnh chính: </h6>
-            <button class="col-sm-9 btn btn-outline-info btn-block" ng-click="vm.popupFileMainImage()"
-                    ng-model="vm.slide.data.mainImage"><i
-                    class="mdi mdi-cloud-upload"></i> Chọn ảnh
-            </button>
-        </div>
-        <div class="row mt-4">
-            <h6 class="col-sm-3">Ảnh phụ 1: </h6>
-            <button class="col-sm-9 btn btn-outline-info btn-block" ng-click="vm.popupFileLeftSubImage()"
-                    ng-model="vm.slide.data.leftSubImage"><i
-                    class="mdi mdi-cloud-upload"></i> Chọn ảnh
-            </button>
-        </div>
-        <div class="row mt-2">
-            <h6 class="col-sm-3">Tiêu đề: </h6>
-            <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.leftSubTitle">
-        </div>
-        <div class="row mt-4">
-            <h6 class="col-sm-3">Ảnh phụ 2: </h6>
-            <button class="col-sm-9 btn btn-outline-info btn-block" ng-click="vm.popupFileRightSubImage()"
-                    ng-model="vm.slide.data.rightSubImage"><i
-                    class="mdi mdi-cloud-upload"></i> Chọn ảnh
-            </button>
-            <!--        <input type="text" class="form-control" ng-model="vm.slide.data.quote">-->
-        </div>
-        <div class="row mt-2">
-            <h6 class="col-sm-3">Tiêu đề: </h6>
-            <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.rightSubTitle">
-        </div>
 
-        <div class="row mt-2">
-            <h6 class="col-sm-3">Màn hình hiển thị: </h6>
-            <div class="col-sm-3 form-check">
-                <input id="screen1" class="form-check-input" type="checkbox" value="">
-                <label class="form-check-label" for="screen1">
-                    Màn hình 1
-                </label>
+        <form class="col-6 form-group">
+            <div class="row mt-4">
+                <h6 class="text-megna">
+                    <h6 class="col-sm-3">Ngôn ngữ: </h6>
+                    <span class="mr-2" ng-repeat="lang in vm.languages" ng-click="vm.setLang(lang)">
+                            <div ng-if="lang == vm.current_lang" style="border:2px solid #0b67cd; height: 22px"><i class="lang-sm"  lang="{[{ lang }]}"></i></div>
+                            <div ng-if="lang != vm.current_lang"><i class="lang-sm"  lang="{[{ lang }]}"></i></div></span>
+                </h6>
             </div>
-            <div class="col-sm-3 form-check">
-                <input id="screen2" class="form-check-input" type="checkbox" value="">
-                <label class="form-check-label" for="screen2">
-                    Màn hình 2
-                </label>
-            </div>
-            <div class="col-sm-3 form-check">
-                <input id="screen3" class="form-check-input" type="checkbox" value="">
-                <label class="form-check-label" for="screen3">
-                    Màn hình 3
-                </label>
-            </div>
-<!--            <div class="col-sm-3 form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="twoScreen">-->
-<!--                <label class="form-check-label" for="twoScreen">-->
-<!--                    Màn hình 2-->
-<!--                </label>-->
+<!--            <div class="row mt-4">-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""-->
+<!--                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i-->
+<!--                            class="flag-icon flag-icon-vn"></i></a>-->
+<!--                    <div class="dropdown-menu dropdown-menu-right scale-up"><a class="dropdown-item"-->
+<!--                                                                               href="/vpgov/backend/slide/#!/create"><span-->
+<!--                            class="lang-sm lang-lbl" lang="en"></span></a></div>-->
+<!--                </li>-->
 <!--            </div>-->
-<!--            <div class="col-sm-3 form-check">-->
-<!--                <input class="form-check-input" type="checkbox" value=" "id="threeScreen">-->
-<!--                <label class="form-check-label" for="threeScreen">-->
-<!--                    Màn hình 3-->
-<!--                </label>-->
-<!--            </div>-->
-        </div>
-        <button class="btn btn-outline-info" data-ng-click="vm.submit()">Submit</button>
-    </form>
-
-    <div class="col-md-6" ;>
-        <div id="preview-slide" class=""
-             style="padding: 5%; background-image: url('http://cms.local{[{ vm.slide.data.backgroundImage || '/ui/material-pro/assets/images/no-image.jpg' }]}'); background-size: 100% 100%; width:380px;height:676px;margin:0 auto;margin-bottom: 0px; ">
-            <p style=" margin: 8% 3% 0 3%; font-weight:500 ;width:94%; font-family:Roboto,Helvetica,Arial,sans-serif; font-size:15px; line-height:23px; color:#ffffff; top:150px; left:88px; white-space:normal; text-align: justify;"
-               class="ls-l"
-               data-ls="offsetyin:500; delayin:350; easingin:easeOutExpo; offsetyout:-1300; easingout:easeInExpo; parallaxlevel:0;">
-                <span style="font-size:inherit;font-family:none;font-weight:bold;position:absolute;margin-left:-15px;">“</span>
-                {[{ vm.slide.data.quote }]}<span style="font-size:inherit;font-family:none;font-weight:bold;"> ”</span>
-            </p>
-            <div style="margin-left: 3%; margin-top: 5px; width:110px; height:2.6px; background:#db9200; top:470px; left:81px;"
-                 class="ls-l"></div>
-            <p style="position: ; margin-bottom: 0px; margin-left: 3%; font-weight:500;font-family:Roboto,Helvetica,Arial,sans-serif; font-size:9px; line-height:30px; color:#cccccc; left:95px;"
-               class="ls-l">{[{ vm.slide.data.position }]}</p>
-            <p style="position: ; margin-left: 3%; font-weight:500;letter-spacing:-0.015em;font-family:Roboto,Helvetica,Arial,sans-serif; font-size:15px; line-height:20px; color:#db9200; top:120px; left:95px;"
-               class="ls-l">{[{ vm.slide.data.name.toUpperCase() }]}</p>
-            <img width="300px" height="294px" src="http://viettel.local{[{ vm.slide.data.mainImage || '/ui/material-pro/assets/images/no-image.jpg'}]}" class="ls-l" alt=""
-                 style="top:170px; left:180px; position: absolute">
-            <div class="row" style="position: absolute; top: 465px; right: 140px; height: 107px;">
-                <div class="col-6" style="">
-                    <img src="http://viettel.local{[{ vm.slide.data.leftSubImage || '/ui/material-pro/assets/images/no-image.jpg' }]}" class=" ls-layer" alt=""
-                         style="position: ; border: 5px solid rgba(255, 255, 255, 0.3); margin: 0px; z-index: auto; width: 160px; height: 107px; padding: 0px; border-radius: 0px; filter: none;">
-                </div>
-                <div class="col-6" style="">
-                    <img src="http://viettel.local{[{ vm.slide.data.rightSubImage || '/ui/material-pro/assets/images/no-image.jpg'}]}" class="ls-layer" alt=""
-                         style="position: ; border: 5px solid rgba(255, 255, 255, 0.3); margin: 0px; z-index: auto; width: 160px; height: 107px; padding: 0px; border-radius: 0px; filter: none;">
-                </div>
+            <div class="row mt-4">
+                <h6 class="col-sm-3">Tên: </h6>
+                <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.name[vm.current_lang]">
+            </div>
+            <div class="row mt-4">
+                <h6 class="col-sm-3">Chức vụ: </h6>
+                <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.position[vm.current_lang]">
+            </div>
+            <div class="row mt-4">
+                <h6 class="col-sm-3">Câu nói: </h6>
+                <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.quote[vm.current_lang]">
             </div>
 
-            <div class="row" style="position: absolute; top: 580px;">
-                <div class="col-6" style="">
-                    <p style="font-weight:400; margin-left: -15px; width:150px; font-family:Roboto,Helvetica,Arial,sans-serif; font-size:9px; line-height:13px; color:#ffffff;  white-space:normal; text-align: justify;"
-                       class="ls-l">{[{ vm.slide.data.leftSubTitle }]}
+            <div class="row mt-4">
+                <h6 class="col-sm-3">Ảnh mờ: </h6>
+                <button id="shadowImage " class="popup-file col-sm-9 btn btn-outline-info btn-block"
+                        value="Shadow Image"
+                        ng-click="vm.popupFileShadowImage()" value="Shadow Image" ng-model="vm.slide.data.shadowImage">
+                    <i class="mdi mdi-cloud-upload" value="Shadow Image"></i> Chọn ảnh
+                </button>
+            </div>
+            <div class="row mt-4">
+                <h6 class="col-sm-3">Nền: </h6>
+                <button class="col-sm-9 btn btn-outline-info btn-block" value="Background Image"
+                        ng-click="vm.popupFileBackground()"
+                        ng-model="vm.slide.data.backgroundImage"><i
+                        class="mdi mdi-cloud-upload"></i> Chọn ảnh
+                </button>
+            </div>
 
+            <div class="row mt-4">
+                <h6 class="col-sm-3">Ảnh chính: </h6>
+                <button class="col-sm-9 btn btn-outline-info btn-block" ng-click="vm.popupFileMainImage()"
+                        ng-model="vm.slide.data.mainImage"><i
+                        class="mdi mdi-cloud-upload"></i> Chọn ảnh
+                </button>
+            </div>
+            <div class="row mt-4">
+                <h6 class="col-sm-3">Ảnh phụ 1: </h6>
+                <button class="col-sm-9 btn btn-outline-info btn-block" ng-click="vm.popupFileLeftSubImage()"
+                        ng-model="vm.slide.data.leftSubImage[vm.current_lang]"><i
+                        class="mdi mdi-cloud-upload"></i> Chọn ảnh
+                </button>
+            </div>
+            <div class="row mt-2">
+                <h6 class="col-sm-3">Tiêu đề: </h6>
+                <input type="text" class="col-sm-9 form-control" ng-model="vm.slide.data.leftSubTitle[vm.current_lang]">
+            </div>
+            <div class="row mt-4">
+                <h6 class="col-sm-3">Ảnh phụ 2: </h6>
+                <button class="col-sm-9 btn btn-outline-info btn-block" ng-click="vm.popupFileRightSubImage()"
+                        ng-model="vm.slide.data.rightSubImage"><i
+                        class="mdi mdi-cloud-upload"></i> Chọn ảnh
+                </button>
+                <!--        <input type="text" class="form-control" ng-model="vm.slide.data.quote">-->
+            </div>
+            <div class="row mt-2">
+                <h6 class="col-sm-3">Tiêu đề: </h6>
+                <input type="text" class="col-sm-9 form-control"
+                       ng-model="vm.slide.data.rightSubTitle[vm.current_lang]">
+            </div>
+
+            <div class="row mt-2">
+                <h6 class="col-sm-3">Màn hình hiển thị: </h6>
+                <div class="col-sm-3 form-check">
+                    <input id="screen1" class="form-check-input" type="checkbox" value="">
+                    <label class="form-check-label" for="screen1">
+                        Màn hình 1
+                    </label>
                 </div>
-                <div class="col-6" style="">
-                    <p style="font-weight:400;width:150px; font-family:Roboto,Helvetica,Arial,sans-serif; font-size:9px; line-height:13px; color:#ffffff; white-space:normal; text-align: justify;"
-                       class="ls-l">{[{ vm.slide.data.rightSubTitle }]}
+                <div class="col-sm-3 form-check">
+                    <input id="screen2" class="form-check-input" type="checkbox" value="">
+                    <label class="form-check-label" for="screen2">
+                        Màn hình 2
+                    </label>
+                </div>
+                <div class="col-sm-3 form-check">
+                    <input id="screen3" class="form-check-input" type="checkbox" value="">
+                    <label class="form-check-label" for="screen3">
+                        Màn hình 3
+                    </label>
+                </div>
+                <!--            <div class="col-sm-3 form-check">-->
+                <!--                <input class="form-check-input" type="checkbox" value="" id="twoScreen">-->
+                <!--                <label class="form-check-label" for="twoScreen">-->
+                <!--                    Màn hình 2-->
+                <!--                </label>-->
+                <!--            </div>-->
+                <!--            <div class="col-sm-3 form-check">-->
+                <!--                <input class="form-check-input" type="checkbox" value=" "id="threeScreen">-->
+                <!--                <label class="form-check-label" for="threeScreen">-->
+                <!--                    Màn hình 3-->
+                <!--                </label>-->
+                <!--            </div>-->
+            </div>
+            <button class="btn btn-outline-info" data-ng-click="vm.submit()">Submit</button>
+        </form>
+
+        <div class="col-md-6" ;>
+            <div id="preview-slide" class=""
+                 style="padding: 5%; background-image: url('http://cms.local{[{ vm.slide.data.backgroundImage || '/ui/material-pro/assets/images/no-image.jpg' }]}'); background-size: 100% 100%; width:380px;height:676px;margin:0 auto;margin-bottom: 0px; ">
+                <p style=" margin: 8% 3% 0 3%; font-weight:500 ;width:94%; font-family:Roboto,Helvetica,Arial,sans-serif; font-size:15px; line-height:23px; color:#ffffff; top:150px; left:88px; white-space:normal; text-align: justify;"
+                   class="ls-l"
+                   data-ls="offsetyin:500; delayin:350; easingin:easeOutExpo; offsetyout:-1300; easingout:easeInExpo; parallaxlevel:0;">
+                    <span style="font-size:inherit;font-family:none;font-weight:bold;position:absolute;margin-left:-15px;">“</span>
+                    {[{ vm.slide.data.quote[vm.current_lang] }]}<span
+                        style="font-size:inherit;font-family:none;font-weight:bold;"> ”</span>
+                </p>
+                <div style="margin-left: 3%; margin-top: 5px; width:110px; height:2.6px; background:#db9200; top:470px; left:81px;"
+                     class="ls-l"></div>
+                <p style="position: ; margin-bottom: 0px; margin-left: 3%; font-weight:500;font-family:Roboto,Helvetica,Arial,sans-serif; font-size:9px; line-height:30px; color:#cccccc; left:95px;"
+                   class="ls-l">{[{ vm.slide.data.position[vm.current_lang] }]}</p>
+                <p style="position: ; margin-left: 3%; font-weight:500;letter-spacing:-0.015em;font-family:Roboto,Helvetica,Arial,sans-serif; font-size:15px; line-height:20px; color:#db9200; top:120px; left:95px;"
+                   class="ls-l">{[{ vm.slide.data.name[vm.current_lang].toUpperCase() }]}</p>
+                <img width="300px" height="294px"
+                     src="http://viettel.local{[{ vm.slide.data.mainImage || '/ui/material-pro/assets/images/no-image.jpg'}]}"
+                     class="ls-l" alt=""
+                     style="top:170px; left:180px; position: absolute">
+                <div class="row" style="position: absolute; top: 465px; right: 140px; height: 107px;">
+                    <div class="col-6" style="">
+                        <img src="http://viettel.local{[{ vm.slide.data.leftSubImage || '/ui/material-pro/assets/images/no-image.jpg' }]}"
+                             class=" ls-layer" alt=""
+                             style="position: ; border: 5px solid rgba(255, 255, 255, 0.3); margin: 0px; z-index: auto; width: 160px; height: 107px; padding: 0px; border-radius: 0px; filter: none;">
+                    </div>
+                    <div class="col-6" style="">
+                        <img src="http://viettel.local{[{ vm.slide.data.rightSubImage || '/ui/material-pro/assets/images/no-image.jpg'}]}"
+                             class="ls-layer" alt=""
+                             style="position: ; border: 5px solid rgba(255, 255, 255, 0.3); margin: 0px; z-index: auto; width: 160px; height: 107px; padding: 0px; border-radius: 0px; filter: none;">
+                    </div>
+                </div>
+
+                <div class="row" style="position: absolute; top: 580px;">
+                    <div class="col-6" style="">
+                        <p style="font-weight:400; margin-left: -15px; width:150px; font-family:Roboto,Helvetica,Arial,sans-serif; font-size:9px; line-height:13px; color:#ffffff;  white-space:normal; text-align: justify;"
+                           class="ls-l">{[{ vm.slide.data.leftSubTitle[vm.current_lang] }]}
+
+                    </div>
+                    <div class="col-6" style="">
+                        <p style="font-weight:400;width:150px; font-family:Roboto,Helvetica,Arial,sans-serif; font-size:9px; line-height:13px; color:#ffffff; white-space:normal; text-align: justify;"
+                           class="ls-l">{[{ vm.slide.data.rightSubTitle[vm.current_lang] }]}
+                    </div>
+
                 </div>
 
             </div>
-
         </div>
     </div>
 </div>
-
