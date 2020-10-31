@@ -18,12 +18,14 @@
                 <!-- ngIf: vm.postsCount > 0 -->
                 <h6 class="text-megna" ng-if="vm.slidesCount > 0"><i class="mdi mdi-database"></i> Tổng cộng: {[{
                     vm.slidesCount }]} bài viết</h6>
-                <h6 class="text-megna"><i class="mdi mdi-translate"></i> Ngôn ngữ: <span class=""
-                                                                                         ng-repeat="lang in vm.languages"
-                                                                                         ng-click="vm.setLang(lang)"><i
-                        class="mdi mdi-check" ng-if="lang == vm.current_lang"></i>&nbsp;<i class="lang-sm"
-                                                                                           lang="{[{ lang }]}"></i>&nbsp;</span>
-                </h6>
+
+                <div class="text-megna row">
+                    <h6 class="col-sm-3">Ngôn ngữ: </h6>
+                    <span class="mr-2 col-sm-1" ng-repeat="lang in vm.languages" ng-click="vm.setLang(lang)">
+                        <i ng-if="lang == vm.current_lang" style="outline-style: outset; outline-color: #0b67cd; outline-width: 3px " class="lang-sm" class="lang-sm" lang="{[{ lang }]}"></i>
+                        <i ng-if="lang != vm.current_lang"class="lang-sm" lang="{[{ lang }]}"></i>
+                    </span>
+                </div>
 
             </div>
             <div class="col-lg-6 col-md-6 text-right">
@@ -62,8 +64,8 @@
 <!--                        <div ng-if="vm.indexScreen == '1'">-->
                         <a ui-sref="edit({slideUuid: u.uuid})" id="edit-uuid" ng-click="vm.getUuid(u.uuid)" value="{[{ u.uuid }]}"><img class="d-flex mr-3" ng-src="{[{ u.data.mainImage || '/ui/material-pro/assets/images/no-image.jpg' }]}" alt="Image" width="100"></a>
                         <div class="media-body">
-                            <h4 class="mt-0 mb-1 text-primary" ng-click="vm.getUuid(u.uuid)"><a ui-sref="edit({slideUuid: u.uuid})">{[{u.data.name}]}</a></h4>
-                            <h6 class="mt-0 mb-1 text-primary" ng-click="vm.getUuid(u.uuid)"><a ui-sref="edit({slideUuid: u.uuid})">{[{u.data.position}]}</a></h6>
+                            <h4 class="mt-0 mb-1 text-primary" ng-click="vm.getUuid(u.uuid)"><a ui-sref="edit({slideUuid: u.uuid})">{[{u.data.name[vm.current_lang]}]}</a></h4>
+                            <h6 class="mt-0 mb-1 text-primary" ng-click="vm.getUuid(u.uuid)"><a ui-sref="edit({slideUuid: u.uuid})">{[{u.data.position[vm.current_lang]}]}</a></h6>
                         </div>
                             <div class="d-flex mr-3">
                                 <button ng-click="vm.changeStatus1(u.uuid, u.data.status)" ng-if="u.data.display[0] == 1"type="button"  style="width: 85px" class="btn btn-sm btn-info">Màn hình 1</button>

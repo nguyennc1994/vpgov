@@ -325,7 +325,7 @@
                             <ul class="dropdown-user">
                                 <li>
                                     <div class="dw-user-box">
-                                        <div class="u-img"><img src="/modules/vpgov/themes/backend/default/assets/img/viettel-logo-user.bmp "
+                                        <div class="u-img"><img src="/modules/vpgov/themes/backend/default/assets/img/viettel-logo-user.bmp"
                                                                 alt="user"></div>
                                         <div class="u-text">
                                             <h4>{{ user['username'] }}</h4>
