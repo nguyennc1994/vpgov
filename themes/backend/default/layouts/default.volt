@@ -10,7 +10,7 @@
     <meta name="author" content="">
     {{ get_title() }}
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/ui/material-pro/assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/modules/vpgov/themes/backend/default/assets/img/favicon.png">
     <!-- Bootstrap Core CSS -->
     <link href="/ui/material-pro/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/bower_components/bootstrap-languages/languages.css" rel="stylesheet">
@@ -286,17 +286,17 @@
                     <!-- Logo icon --><b>
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                         <!-- Dark Logo icon -->
-                        <img src="/ui/material-pro/assets/images/isys-icon.png" alt="homepage" class="dark-logo"/>
+                        <img src="/modules/vpgov/themes/backend/default/assets/img/isys-icon.png" alt="homepage" class="dark-logo"/>
                         <!-- Light Logo icon -->
-                        <img src="/ui/material-pro/assets/images/isys-light-icon.png" alt="homepage"
+                        <img src="/modules/vpgov/themes/backend/default/assets/img/viettel-logo.png" alt="homepage"
                              class="light-logo"/>
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text --><span>
                          <!-- dark Logo text -->
-                         <img src="/ui/material-pro/assets/images/isys-text.png" alt="homepage" class="dark-logo"/>
+                         <img src="/modules/vpgov/themes/backend/default/assets/img/isys-text.png" alt="homepage" class="dark-logo"/>
                         <!-- Light Logo text -->
-                         <img src="/ui/material-pro/assets/images/isys-light-text.png" class="light-logo"
+                         <img src="/modules/vpgov/themes/backend/default/assets/img/viettel-text.png" class="light-logo"
                               alt="homepage"/></span> </a>
             </div>
             <!-- ============================================================== -->
@@ -319,13 +319,13 @@
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="/ui/material-pro/assets/images/users/user.svg" alt="user"
+                                    src="/modules/vpgov/themes/backend/default/assets/img/viettel-logo-user.bmp" alt="user"
                                     class="profile-pic"/></a>
                         <div class="dropdown-menu dropdown-menu-right scale-up">
                             <ul class="dropdown-user">
                                 <li>
                                     <div class="dw-user-box">
-                                        <div class="u-img"><img src="/ui/material-pro/assets/images/users/user.svg "
+                                        <div class="u-img"><img src="/modules/vpgov/themes/backend/default/assets/img/viettel-logo-user.bmp "
                                                                 alt="user"></div>
                                         <div class="u-text">
                                             <h4>{{ user['username'] }}</h4>
@@ -371,9 +371,9 @@
         <div class="scroll-sidebar">
             <!-- User profile -->
             <div class="user-profile"
-                 style="background: url(/ui/material-pro/assets/images/background/user-info.jpg) no-repeat;">
+                 style="background: url(/modules/vpgov/themes/backend/default/assets/img/background/user-info.jpg) no-repeat;">
                 <!-- User profile image -->
-                <div class="profile-img"><img src="/ui/material-pro/assets/images/users/user.svg" alt="user"/></div>
+                <div class="profile-img"><img src="/modules/vpgov/themes/backend/default/assets/img/viettel-logo-user.bmp" alt="user"/></div>
                 <!-- User profile text-->
                 <div class="profile-text"><a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown"
                                              role="button" aria-haspopup="true"
@@ -569,9 +569,10 @@
         <!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
-        <footer class="footer"> © 2018 by isys.vn</footer>
+        <footer class="footer"> 2019 - Tập Đoàn Công Nghiệp Viễn Thông Quân Đội Viettel</footer>
         <!-- ============================================================== -->
         <!--  End footer -->
+        <!-- ============================================================== -->
         <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
