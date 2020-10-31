@@ -20,7 +20,7 @@
                     vm.slidesCount }]} bài viết</h6>
 
                 <div class="text-megna row">
-                    <h6 class="col-sm-3">Ngôn ngữ: </h6>
+                    <h6 class="col-sm-3"><i class="mdi mdi-translate"></i> Ngôn ngữ: </h6>
                     <span class="mr-2 col-sm-1" ng-repeat="lang in vm.languages" ng-click="vm.setLang(lang)">
                         <i ng-if="lang == vm.current_lang" style="outline-style: outset; outline-color: #0b67cd; outline-width: 3px " class="lang-sm" class="lang-sm" lang="{[{ lang }]}"></i>
                         <i ng-if="lang != vm.current_lang"class="lang-sm" lang="{[{ lang }]}"></i>

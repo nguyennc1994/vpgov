@@ -22,12 +22,24 @@ angular.module('vpgov').config(function ($stateProvider, $urlRouterProvider, CFG
 });
 
 
-angular.module('vpgov').controller('SlideList1Controller', function($scope, SlideService){
+angular.module('vpgov').controller('SlideList1Controller', function($scope, $stateParams, SlideService){
     var vm = this;
-    function init(){
+
+    vm.languages = ['vi', 'en'];
+    vm.current_lang = $stateParams.lang ;
+    console.log("vm.current_lang: "+vm.current_lang)
+
+    vm.setLang = function (lang) {
+        vm.current_lang = lang;
+        // vm.filterCriteria.lang = lang;
+        // vm.currentPage = 1;
+        // vm.filterCriteria.pageNumber = 1;
         vm.fetchResult();
-        setTimeout(
-            vm.getToHtMl, 3000)
+    };
+
+    function init(){
+        vm.current_lang = 'vi';
+        vm.fetchResult();
 
     }
     vm.slides = [];
