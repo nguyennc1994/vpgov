@@ -27,6 +27,12 @@ angular.module('vpgov').config(function ($stateProvider, $urlRouterProvider, CFG
         });
 });
 
+angular.module('vpgov').controller('SlideListSlideController', function ($scope,$stateParams, $translate, SlideService) {
+    function init(){
+
+    }
+    init();
+});
 
 var uuid_editing = "";
 angular.module('vpgov').controller('SlideListController', function ($scope,$stateParams, $translate, SlideService) {

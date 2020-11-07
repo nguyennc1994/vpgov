@@ -18,6 +18,18 @@ class FrontendController extends ControllerBase
     {
     $this->view->setVar('title','Backend');
     }
+    public function leftSlideAction()
+    {
+    $this->view->setVar('title','Backend');
+//        $this->assets->addJs("/modules/vpgov/themes/backend/default/ng-app/slide/services/index.js");
+    }
+    public function centerSlideAction()
+    {
+        $this->view->setVar('title','Backend');
+//        $this->assets->addJs("/modules/vpgov/themes/backend/default/ng-app/slide/services/index.js");
+    }
+
+
 
     public function slideAction()
     {
@@ -25,11 +37,5 @@ class FrontendController extends ControllerBase
         $this->assets->addJs("/modules/vpgov/themes/frontend/default/ng-app/slide/services/index.js");
         $this->assets->addJs("/modules/vpgov/themes/frontend/default/ng-app/slide/controllers/index.js");
     }
-    public function transparentAction()
-    {
-        $this->assets->addJs("/modules/vpgov/themes/frontend/default/ng-app/app.js");
-        $this->assets->addJs("/modules/vpgov/themes/frontend/default/ng-app/transparent/services/screen.js");
-        $this->assets->addJs("/modules/vpgov/themes/frontend/default/ng-app/transparent/controllers/screen.js");
-        $this->assets->addJs("/modules/vpgov/themes/backend/default/ng-app/transparent/services/article.js");
-    }
+
 }

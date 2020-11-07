@@ -19,7 +19,14 @@ class BackendController extends ControllerBase
 
     public function indexAction()
     {
-    $this->view->setVar('title','Backend');
+        $this->assets->addJs("/modules/vpgov/themes/backend/default/ng-app/app.js");
+        $this->assets->addJs("/modules/vpgov/themes/backend/default/ng-app/display/controllers/index.js");
+
+        $this->view->setVar('main_title', ['vi'=>'Quan tâm của Đảng và Nhà nước']);
+        $this->view->setVar('main_breadcrumb', [
+            ['title' => ['vi'=>'Trang chủ'], 'href' => '/vpgov/backend/'],
+            ['title' => ['vi'=>'Quan tâm của Đảng và Nhà nước'], 'href' => false],
+        ]);
     }
 
     public function slideAction()

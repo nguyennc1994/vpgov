@@ -247,6 +247,17 @@
             border-left-color: #F0F3BD;
         }
 
+
+        .navbar-brand img {
+        height: 20px !important;
+        }
+        .slide-list {
+            width: 22%;
+            margin-right: 
+        }
+        .slide-list iframe {
+                    border: none
+                }
         #slider {
 
         }
@@ -286,7 +297,7 @@
                     <!-- Logo icon --><b>
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                         <!-- Dark Logo icon -->
-                        <img src="/modules/vpgov/themes/backend/default/assets/img/isys-icon.png" alt="homepage" class="dark-logo"/>
+                        <img src="/modules/vpgov/themes/backend/default/assets/img/viettel-logo.png" alt="homepage" class="dark-logo"/>
                         <!-- Light Logo icon -->
                         <img src="/modules/vpgov/themes/backend/default/assets/img/viettel-logo.png" alt="homepage"
                              class="light-logo"/>
@@ -294,9 +305,9 @@
                     <!--End Logo icon -->
                     <!-- Logo text --><span>
                          <!-- dark Logo text -->
-                         <img src="/modules/vpgov/themes/backend/default/assets/img/isys-text.png" alt="homepage" class="dark-logo"/>
+                         <img src="/modules/vpgov/themes/backend/default/assets/img/viettel-text-dark.png" alt="homepage" class="dark-logo"/>
                         <!-- Light Logo text -->
-                         <img src="/modules/vpgov/themes/backend/default/assets/img/viettel-text.png" class="light-logo"
+                         <img src="/modules/vpgov/themes/backend/default/assets/img/viettel-text-light.png" class="light-logo"
                               alt="homepage"/></span> </a>
             </div>
             <!-- ============================================================== -->
@@ -393,8 +404,11 @@
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
                     {#<li class="nav-small-cap">PERSONAL</li>#}
-                    <li><a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false"><i
-                                    class="mdi mdi-book-open-page-variant"></i><span class="hide-menu">Nội dung </span></a>
+                    <li><a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                    <i class="mdi mdi-book-open-page-variant"></i><span class="hide-menu">Nội dung </span></a>
+                        <ul aria-expanded="false" class="collapse">
+                             <li><a href="/vpgov/backend/"><i class="mdi mdi-minus"></i>Hiển thị</a></li>
+                         </ul>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="/vpgov/backend/slide/"><i class="mdi mdi-minus"></i>Danh sách Slide</a></li>
 
@@ -403,9 +417,8 @@
                             <li>
                                 <a ui-sref="create"><i class="mdi mdi-minus"></i> Thêm Slide</a>
                             </li>
-
-
                         </ul>
+                        </a>
                     </li>
                     <li><a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false"><i
                                     class="mdi mdi-book-open-page-variant"></i><span class="hide-menu">Hệ thống </span></a>
@@ -594,8 +607,7 @@
 <!-- ============================================================== -->
 <script src="/ui/material-pro/assets/plugins/jquery/jquery.min.js"></script>
 
-<script src="/bower_components/tinymce/tinymce.js"></script>
-<script type="text/javascript" src="/bower_components/angular-ui-tinymce/dist/tinymce.min.js"></script>
+
 <!-- Bootstrap tether Core JavaScript -->
 <script src="/ui/material-pro/assets/plugins/popper/popper.min.js"></script>
 <script src="/ui/material-pro/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -629,8 +641,6 @@
 <!-- ============================================================== -->
 <script src="/ui/material-pro/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 
-<script src="/bower_components/tinymce/tinymce.js"></script>
-{#<script src="/ui/material-pro/assets/plugins/tinymce/tinymce.min.js"></script>#}
 
 <script src="/bower_components/underscore/underscore-min.js"></script>
 <script src="/bower_components/moment/min/moment.min.js"></script>
@@ -659,6 +669,11 @@
 <script type="text/javascript" src="/bower_components/angular-sweetalert/dist/ngSweetAlert2.min.js"></script>
 <script type='text/javascript' src='/bower_components/angular-loading-bar/build/loading-bar.min.js'></script>
 <script type='text/javascript' src='/bower_components/angular-img-fallback/angular.dcb-img-fallback.min.js'></script>
+
+
+<script src="/bower_components/tinymce/tinymce.js"></script>
+<script type="text/javascript" src="/bower_components/angular-ui-tinymce/dist/tinymce.min.js"></script>
+
 <!-- Tree -->
 <script type="text/javascript" src="/bower_components/angular-ui-tree/dist/angular-ui-tree.min.js"></script>
 <script type="text/javascript"

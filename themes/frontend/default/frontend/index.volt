@@ -1,8 +1,6 @@
 {% extends 'layouts/default.volt' %}
 {% block content %}
-    <div class="view-animate-container">
-        <div ui-view></div>
-    </div>
+<h1>This is frontend site</h1>
     <script>
         console.log("Day la frontend slide page")
     </script>
