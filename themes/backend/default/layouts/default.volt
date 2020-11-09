@@ -317,13 +317,14 @@
                 <!-- ============================================================== -->
                 <!-- toggle and nav items -->
                 <!-- ============================================================== -->
-                <ul class="navbar-nav mr-auto mt-md-0">
+                <ul class="navbar-nav mr-auto mt-md-0" style="width: 100%">
                     <!-- This is  -->
                     <li class="nav-item"><a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark"
                                             href="javascript:void(0)"><i class="mdi mdi-menu"></i></a></li>
                     <li class="nav-item"><a
                                 class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark"
                                 href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+                    <li class="nav-item" style="width: 100%"><h1 style="font-weight: 500; text-align: center; margin-top: 15px; color: #ffffff">SỰ QUAN TÂM CỦA ĐẢNG VÀ NHÀ NƯỚC</h1></li>
 
                 </ul>
                 <ul class="navbar-nav my-lg-0">

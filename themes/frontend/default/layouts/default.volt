@@ -145,8 +145,8 @@
 
 </head>
 
-{#<body ng-app="vpgov">#}
-<body>
+<body ng-app="vpgov">
+{#<body>#}
 
                     {% block content %}{% endblock %}
 

@@ -579,14 +579,13 @@ angular.module('vpgov').controller('SlideEditController', function ($scope, $sta
     var vm = this;
     vm.languages = ['vi', 'en'];
     vm.current_lang = $stateParams.lang ;
-    console.log("vm.current_lang: "+vm.current_lang)
     vm.setLang = function (lang) {
         vm.current_lang = lang;
         // vm.filterCriteria.lang = lang;
         // vm.fetchResult();
     };
     vm.init = function () {
-        vm.current_lang="vi";
+        vm.current_lang="vi",
         vm.slide = {
             uuid: uuid.v4(),
             data: {
@@ -629,6 +628,11 @@ angular.module('vpgov').controller('SlideEditController', function ($scope, $sta
             catalog: {},
 
         };
+
+        vm.filterCriteria = {
+            uuid: uuid_editing
+        }
+        vm.selectPage()
     };
 
     vm.submit = function () {
