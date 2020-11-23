@@ -16,6 +16,9 @@ class IndexController extends ControllerBase
 
     public function indexAction()
     {
-    $this->view->setVar('title','Viettel');
+        $this->view->setVar('title','VP GOV');
+        $this->assets->addJs("/modules/vpgov/themes/frontend/default/ng-app/app.js");
+        $this->assets->addJs("/modules/vpgov/themes/frontend/default/ng-app/slide/services/index.js");
+        $this->assets->addJs("/modules/vpgov/themes/frontend/default/ng-app/slide/controllers/index.js");
     }
 }

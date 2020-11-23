@@ -10,11 +10,11 @@ angular.module('vpgov').service(
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 // set the headers so angular passing info as form data (not request payload)
             }).then(function (response) {
-                alert("Thêm thành công");
+                // alert("Thêm thành công");
                 deferred.resolve(response.data);
 
             }, function (error) {
-                alert("Thêm không thành công");
+                // alert("Thêm không thành công");
             });
 
             return deferred.promise;

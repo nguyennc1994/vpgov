@@ -640,9 +640,9 @@ angular.module('vpgov').controller('SlideEditController', function ($scope, $sta
         if (confirm('Bạn có chắc chắn thêm dữ liệu không?')) {
             SlideService.save(vm.slide).then(function (data) {
                 if (response.success) {
-                    alertify.success('Thêm dữ liệu thành công');
+                    // alertify.success('Thêm dữ liệu thành công');
                 } else {
-                    alertify.error('Lỗi khi thêm dữ liệu');
+                    // alertify.error('Lỗi khi thêm dữ liệu');
                 }
             });
         }

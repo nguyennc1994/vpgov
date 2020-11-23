@@ -18,104 +18,11 @@
             font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
             font-size: 20px;
             overflow:hidden;
-        }
-        h1 { font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
-
-        #hienvat_1_thumb {
-            position:fixed;
-            bottom:100px;
-            left:200px;
-            z-index:9999;
-        }
-
-        #hienvat_2_thumb {
-            position:fixed;
-            bottom:100px;
-            left:450px;
-            z-index:9999;
-        }
-
-        #hienvat_3_thumb {
-            position:fixed;
-            bottom:100px;
-            left:700px;
-            z-index:9999;
-        }
-
-        .title {
-            position:fixed;
-            top:80px;
-            left:120px;
-            width:840px;
-            height:70px;
-            border:1px solid black;
-            text-align: center;
-            vertical-align: middle;
-            line-height: 80px;
-        };
-
-        .title p {
-        }
-
-        #info {
-            position:fixed;
-            bottom:93px;
-            left:895px;
-            z-index:999;
-        }
-
-        #content_1, #content_2, #content_3 {
-            position:fixed;
-            top:280px;
-            left:120px;
-            border:1px solid black;
-            width:840px;
-            height:1070px;
-            display:block;
-            background:#fff;
-        }
-
-        #content_2, #content_3 {
-            position:fixed;
-            top:280px;
-            left:120px;
-            border:1px solid black;
-            width:840px;
-            height:1070px;
-            display:block;
-            background:#fff;
-            display:none;
-        }
-
-
-
-
-        .close {
-            position:fixed;
-            top:313px;
-            left:895px;
-            z-index:9999;
-        }
-
-        .media_content{
-            margin-left:1px;
-        }
-
-        .description_1, .description_2, .description_3 {
-            padding:20px;
-        }
-
-        video {
-            -moz-transform:scale(1.5);
-            -webkit-transform:scale(1.5);
-            -o-transform:scale(1.5);
-            -ms-transform:scale(1.5);
-            transform:rotate(90deg);
-
+			margin : 0 !important;
         }
 
     </style>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>-->
     <script src="/ui/material-pro/assets/plugins/jquery/jquery.min.js"></script>
     <script src="/modules/vpgov/themes/backend/default/assets/js/greensock.js"></script>
     <script src="/modules/vpgov/themes/backend/default/assets/js/jquery.js"></script>
@@ -204,7 +111,7 @@
                     <script type="text/javascript" src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
                     <script type="text/javascript" src="/bower_components/ng-dialog/js/ngDialog.min.js"></script>
                     <script type="text/javascript" src="/bower_components/ng-i18next/dist/ng-i18next.min.js"></script>
-                    <script type="text/javascript" src="/bower_components/angular-ckeditor/angular-ckeditor.min.js"></script>
+
                     <script type="text/javascript" src="/bower_components/angular-ui-tinymce/dist/tinymce.min.js"></script>
                     <script type="text/javascript" src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
                     <script type="text/javascript" src="/bower_components/angular-slugify/angular-slugify.js"></script>
@@ -256,8 +163,6 @@
                     <!-- DataTable.net -->
                     <script src="/bower_components/datatables.net/js/jquery.dataTables.js" type="text/javascript" charset="utf-8"></script>
                     <script src="/bower_components/angular-datatables/dist/angular-datatables.min.js" type="text/javascript" charset="utf-8"></script>
-                    <script src="https://cdn.ckeditor.com/4.8.0/full-all/ckeditor.js"></script>
-                    {#<script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>#}
                     {{ assets.outputJs() }}
 
 </body>

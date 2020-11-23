@@ -1,20 +1,20 @@
 angular.module('vpgov').config(function ($stateProvider, $urlRouterProvider, CFG) {
-    $urlRouterProvider.otherwise("/list");
+    $urlRouterProvider.otherwise("/list1");
     $stateProvider
         .state('list1', {
-            templateUrl: '/modules/vpgov/themes/frontend/default/ng-app/slide/partials/list1.html',
+            templateUrl: '/modules/vpgov/themes/frontend/default/ng-app/slide/partials/list2.html',
             controller: 'SlideList1Controller',
             controllerAs: 'vm',
             url: "/list1"
         })
         .state('list2', {
-            templateUrl: '/modules/vpgov/themes/frontend/default/ng-app/slide/partials/list1.html',
+            templateUrl: '/modules/vpgov/themes/frontend/default/ng-app/slide/partials/list2.html',
             controller: 'SlideList2Controller',
             controllerAs: 'vm',
             url: "/list2"
         })
         .state('list3', {
-            templateUrl: '/modules/vpgov/themes/frontend/default/ng-app/slide/partials/list1.html',
+            templateUrl: '/modules/vpgov/themes/frontend/default/ng-app/slide/partials/list2.html',
             controller: 'SlideList3Controller',
             controllerAs: 'vm',
             url: "/list3"
@@ -63,9 +63,9 @@ angular.module('vpgov').controller('SlideList1Controller', function($scope, $sta
         });
         console.log("console.log( vm.slidess)"+ vm.slidess)
     };
-    // console.log("SlidessssS: "+vm.slides)
+    console.log("SlidessssS: "+vm.slides)
     vm.getToHtMl = function (){
-
+        console.log("Get to Html")
         $("#slider").delay(4000).fadeIn();
     }
 
@@ -112,11 +112,11 @@ angular.module('vpgov').controller('SlideList2Controller', function($scope, $sta
         return SlideService.list(vm.filterCriteria).then(function (data) {
             // vm.slides = data.items;
 
-            for(let i =0; i< data.items.length; i++){
-                if(data.items[i].data.display[1] == 1){
-                    vm.slides.push(data.items[i]);
-                }
-            }
+                    for(let i =0; i< data.items.length; i++){
+                        if(data.items[i].data.display[1] == 1){
+                            vm.slides.push(data.items[i]);
+                        }
+                    }
             vm.totalPages = data.pages;
             vm.slidesCount = data.items.length;
         }, function () {
@@ -126,9 +126,9 @@ angular.module('vpgov').controller('SlideList2Controller', function($scope, $sta
         });
         console.log("console.log( vm.slidess)"+ vm.slidess)
     };
-
+    console.log("SlidessssS: "+vm.slides)
     vm.getToHtMl = function (){
-
+        console.log("Get to Html")
         $("#slider").delay(4000).fadeIn();
     }
 
@@ -145,6 +145,7 @@ angular.module('vpgov').controller('SlideList2Controller', function($scope, $sta
     })
 
     init();
+
 });
 
 angular.module('vpgov').controller('SlideList3Controller', function($scope, $stateParams, SlideService){
@@ -174,11 +175,11 @@ angular.module('vpgov').controller('SlideList3Controller', function($scope, $sta
         return SlideService.list(vm.filterCriteria).then(function (data) {
             // vm.slides = data.items;
 
-            for(let i =0; i< data.items.length; i++){
-                if(data.items[i].data.display[2] == 1){
-                    vm.slides.push(data.items[i]);
-                }
-            }
+                    for(let i =0; i< data.items.length; i++){
+                        if(data.items[i].data.display[2] == 1){
+                            vm.slides.push(data.items[i]);
+                        }
+                    }
             vm.totalPages = data.pages;
             vm.slidesCount = data.items.length;
         }, function () {
@@ -188,9 +189,9 @@ angular.module('vpgov').controller('SlideList3Controller', function($scope, $sta
         });
         console.log("console.log( vm.slidess)"+ vm.slidess)
     };
-
+    console.log("SlidessssS: "+vm.slides)
     vm.getToHtMl = function (){
-
+        console.log("Get to Html")
         $("#slider").delay(4000).fadeIn();
     }
 
@@ -207,4 +208,5 @@ angular.module('vpgov').controller('SlideList3Controller', function($scope, $sta
     })
 
     init();
+
 });
